@@ -1,0 +1,43 @@
+.navbar-wrapper {
+  background-color: #0d0a23;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 1rem 1.5rem;
+
+  * {
+    display: flex;
+    * {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  :last-child {
+    :last-child {
+      margin-right: 0px;
+    }
+  }
+}
+
+.nav-logo {
+  margin-right: 1.25rem;
+  img {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+.nav-logo-name {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+}
+
+.nav-item {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  margin: 0px 0.5rem;
+  padding: 0.75rem;
+}
