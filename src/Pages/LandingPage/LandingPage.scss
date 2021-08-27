@@ -1,0 +1,86 @@
+.banner-one {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  height: 100vh;
+
+  padding-top: 4rem;
+
+  .banner-text {
+    padding-top: 5rem;
+    padding-left: 3rem;
+    font-family: "Roboto", "sans-serif";
+
+    .banner-heading {
+      color: white;
+      font-size: 4rem;
+      padding-bottom: 2rem;
+    }
+
+    .banner-subheading {
+      color: white;
+      font-size: 1.35rem;
+    }
+
+    .buttons-wrapper {
+      margin-top: 4rem;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      width: 80%;
+      align-items: center;
+
+      .timeline-icon {
+        color: white;
+        margin: 0.33rem 0px;
+        font-size: 1.5rem;
+      }
+
+      button {
+        width: 15rem;
+        margin-top: -1rem;
+        margin-left: 1rem;
+        padding: 0.5rem 0.33rem;
+        background-color: black;
+        color: white;
+        border: 2px solid white;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        transition: all 0.35s;
+        cursor: pointer;
+        font-family: "Roboto", "sans-serif";
+
+        &:hover {
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+  }
+
+  .img {
+    height: 100%;
+    width: 55%;
+    position: relative;
+    object-fit: fill;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    .gradient-overlay {
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(
+        270deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.1) 40%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0.5) 60%,
+        rgba(0, 0, 0, 0.7) 70%,
+        rgba(0, 0, 0, 1) 100%
+      );
+    }
+  }
+}

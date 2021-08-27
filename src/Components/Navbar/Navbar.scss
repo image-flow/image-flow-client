@@ -1,8 +1,12 @@
 .navbar-wrapper {
-  background-color: #0d0a23;
+  background-color: black;
+  position: fixed;
+  z-index: 9999;
 
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
 
   padding: 1rem 1.5rem;
 
