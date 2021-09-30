@@ -1,10 +1,9 @@
-import Navbar from "../components/Navbar/Navbar";
 import LandingPage from "../views/LandingPage/LandingPage";
 
 import { useRouter } from "next/dist/client/router";
 import { useEffect } from "react";
 
-import useUser from "../hooks/data-access/useUser/useUser";
+import useUser from "@hooks/data-access/useUser/useUser";
 
 const Index = () => {
   const { user } = useUser();

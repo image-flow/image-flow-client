@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useAuthToken from "../useAuthToken/useAuthToken";
+import useAuthToken from "@hooks/useAuthToken/useAuthToken";
 
 const useUser = () => {
   const [isLoading, setIsloading] = useState(true);
@@ -8,7 +8,7 @@ const useUser = () => {
   const { authToken } = useAuthToken();
 
   const getUser = async () => {
-    const URL = `${process.env.BACKEND_URL}/user`;
+    const URL = `${process.env.API_URL}/user`;
     const body = {
       method: "GET",
       headers: {

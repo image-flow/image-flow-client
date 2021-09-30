@@ -1,5 +1,4 @@
-@import "../../styles/colors.scss";
-@import "../../styles/fonts.scss";
+@import "@styles/colors.scss";
 
 .navbarContainer {
   display: flex;
@@ -26,6 +25,7 @@
     .navbarItem {
       padding: 2rem 1.5rem;
       transition: all 0.35s;
+      font-weight: 500;
       &:hover {
         color: $green;
         background-color: $white;
