@@ -6,6 +6,9 @@ import ReactFlow, {
   Edge,
   Elements,
   Connection,
+  MiniMap,
+  Controls,
+  Node,
 } from "react-flow-renderer";
 import React, { useState } from "react";
 
@@ -76,7 +79,25 @@ const Editor = () => {
           onElementsRemove={onElementsRemove}
           deleteKeyCode={46}
         >
-          <Background variant={BackgroundVariant.Dots} gap={15} size={0.5} />
+          <MiniMap
+            nodeStrokeColor={(n: any) => {
+              if (n.style?.background) return n.style.background;
+              return "#444";
+            }}
+            nodeColor={(n: any) => {
+              if (n.style?.background) return n.style.background;
+
+              return "#eee";
+            }}
+            nodeBorderRadius={5}
+          />
+          <Background
+            variant={BackgroundVariant.Dots}
+            gap={15}
+            size={0.66}
+            color="#aaa"
+          />
+          <Controls />
         </ReactFlow>
       </div>
     </div>
