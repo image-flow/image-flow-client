@@ -10,42 +10,65 @@ import ReactFlow, {
 import React, { useState } from "react";
 
 import Navbar from "@components/Navbar/Navbar";
-import GrayscaleNode from "@components/CustomNodes/Grayscale/GrayscaleNode";
+
+import GrayscaleNode from "@components/CustomNodes/GrayscaleNode/GrayscaleNode";
 import ImageInputNode from "@components/CustomNodes/ImageInputNode/ImageInputNode";
+import SaturationNode from "@components/CustomNodes/SaturationNode/SaturationNode";
+import FilmGrainNode from "@components/CustomNodes/FilmGrainNode/FilmGrainNode";
 
 const initialElements: Elements<any> = [
   {
     id: "1",
     type: "imageInput",
-    position: { x: 250, y: 25 },
-    data: { label: "input Node" },
+    position: { x: 0, y: 0 },
+    data: {},
   },
   {
     id: "2",
     type: "grayscale",
-    position: { x: 100, y: 100 },
-    data: { label: "Output Node" },
+    position: { x: 200, y: 50 },
+    data: { percent: 57 },
+  },
+  {
+    id: "3",
+    type: "saturation",
+    position: { x: 400, y: 25 },
+    data: { percent: 45 },
+  },
+  {
+    id: "4",
+    type: "filmGrain",
+    position: { x: 650, y: 25 },
+    data: { percent: 15 },
   },
 ];
 
 const nodeTypes = {
   grayscale: GrayscaleNode,
+  saturation: SaturationNode,
   imageInput: ImageInputNode,
+  filmGrain: FilmGrainNode,
 };
 
 const Editor = () => {
   const [elements, setElements] = useState(initialElements);
 
   const onConnect = (params: Edge<any> | Connection) =>
-    setElements((els: Elements<any>) => addEdge(params, els));
+    setElements((els: Elements<any>) =>
+      addEdge({ ...params, animated: true }, els)
+    );
 
   const onElementsRemove = (elementsToRemove: Elements<any>) =>
     setElements((els: Elements<any>) => removeElements(elementsToRemove, els));
 
+  const logElements = () => {
+    console.log(elements);
+  };
+
   return (
-    <div>
+    <div style={{ marginTop: "4rem" }}>
       <Navbar />
-      <div style={{ height: 750 }}>
+      <div style={{ height: 650 }}>
         <ReactFlow
           elements={elements}
           nodeTypes={nodeTypes}

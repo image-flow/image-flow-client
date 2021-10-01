@@ -1,10 +1,15 @@
-@import "@styles/colors.scss";
+@import "@styles/colors.global.scss";
 
 .navbarContainer {
   display: flex;
   justify-content: space-between;
   color: $white;
   background-color: $green;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
 
   .navbarLeft {
     display: flex;

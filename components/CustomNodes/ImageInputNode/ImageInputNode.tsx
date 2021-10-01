@@ -1,10 +1,10 @@
 import { Handle, Position } from "react-flow-renderer";
 import styles from "./ImageInputNode.module.scss";
 
-const ImageInputNode = () => {
+const ImageInputNode = ({ data }: { data: any }) => {
   return (
     <div className={styles.container}>
-      Image
+      <div className={styles.label}>Image</div>
       <Handle
         type="source"
         position={Position.Right}
