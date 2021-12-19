@@ -1,6 +1,7 @@
 import styles from "./Banner.module.scss";
 import Image from "next/dist/client/image";
 import bannerScreenshot from "@public/images/banner-screenshot.png";
+import Link from "next/dist/client/link";
 
 const Banner = () => {
 	return (
@@ -13,6 +14,13 @@ const Banner = () => {
 					<input type="email" name="email" id="email" placeholder="Enter your email ID"/>
 					<br /><br />
 					<button type="submit">Book free trial</button>
+						<Link href="browse">
+						<a>
+							<button style={{marginLeft: "1.75rem"}}>
+							Browse Images
+							</button>
+						</a>
+						</Link>
 				</form>
 			</div>
 			<div className={styles.BannerComponentRight}>
